@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プライバシーポリシー - warii</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --dark: #0F172A;
+            --light: #F8FAFC;
+            --text-main: #334155;
+            --text-muted: #64748B;
+            --border: rgba(226, 232, 240, 0.8);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: var(--light);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        header {
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            font-size: 14px;
+            color: var(--primary);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: var(--dark);
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: var(--dark);
+            margin-top: 32px;
+            margin-bottom: 12px;
+            border-left: 4px solid var(--primary);
+            padding-left: 12px;
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+            font-size: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background: rgba(79, 70, 229, 0.04);
+            border: 1px solid rgba(79, 70, 229, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .highlight-box h3 {
+            color: var(--primary);
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .date {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: 40px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-link">&larr; warii ホームへ戻る</a>
+            <h1>プライバシーポリシー</h1>
+        </header>
+
+        <p>「warii」（以下、「当アプリ」といいます）は、ユーザーのプライバシーの保護を最も重視しています。当アプリが提供するサービスにおいて、ユーザー情報の取り扱いに関する方針を以下の通り定めます。</p>
+
+        <div class="highlight-box">
+            <h3>🔒 エンドツーエンド暗号化（E2EE）について</h3>
+            <p>当アプリで登録されるメンバーの銀行口座情報およびPayPayリンク等の個人送金用データは、<strong>サーバーに送信される前にユーザーの端末上でローカル暗号化（AES-256）</strong>されます。暗号化キーは共有URLに含まれ、サーバーには一切保存されません。これにより、開発者を含むいかなる第三者も、サーバー上でユーザーの銀行口座やリンク情報を盗み見ることはできません。</p>
+        </div>
+
+        <h2>1. 取得する情報およびその利用目的</h2>
+        <p>当アプリでは、サービスの提供および広告配信のために以下の情報を取得する場合があります。</p>
+        <ul>
+            <li><strong>割り勘データ（グループ名、出費内容、メンバーの表示名など）</strong><br>
+                割り勘計算およびグループ共有機能を提供するために取得し、データベースに保存します。</li>
+            <li><strong>広告配信用識別子（IDFA / AAID）および製品インタラクション情報</strong><br>
+                当アプリ内に配信される広告（Google AdMob）のパーソナライズおよび成果測定、トラッキングのために使用されます。</li>
+        </ul>
+
+        <h2>2. 第三者提供について</h2>
+        <p>当アプリは、以下の場合を除き、ユーザーの同意なしに取得した個人情報を第三者に提供・開示することはありません。</p>
+        <ul>
+            <li>法令に基づく開示請求があった場合</li>
+            <li>広告配信事業者（Google AdMob）等のSDKを通じて、広告配信・最適化のためにデータが送信される場合</li>
+        </ul>
+
+        <h2>3. 広告の配信について</h2>
+        <p>当アプリでは、第三者配信事業者（Google AdMob）を利用して広告を表示しています。広告配信事業者は、ユーザーの興味に応じた広告を表示するために、広告用識別子（IDFA等）を利用することがあります。デバイスの設定からトラッキングの拒否や広告用識別子のリセットが可能です。</p>
+
+        <h2>4. 免責事項</h2>
+        <p>当アプリおよび共有Webビューアの利用によって生じたトラブルや損失・損害について、開発者は一切の責任を負いかねます。振込先情報の登録・コピーの際は、十分に内容をご確認の上、自己責任でご利用いただくようお願いいたします。</p>
+
+        <h2>5. プライバシーポリシーの変更</h2>
+        <p>当ポリシーの内容は、事前の予告なく変更される場合があります。変更後のプライバシーポリシーは、本ページに掲載された時点から効力を生じるものとします。</p>
+
+        <p class="date">制定日: 2026年6月4日</p>
+    </div>
+</body>
+</html>
