@@ -4,14 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SortSnap - 講義写真をAIで自動フォルダ分け。板書やスライドをスマートに整理して、テスト前の復習を快適に。">
-    <title>SortSnap | 講義写真のAI自動フォルダ分けアプリ</title>
+    <meta name="description" content="SortSnap - 時間割連動で講義写真を自動フォルダ分け。板書やスライドをスマートに整理して、テスト前の復習を快適に。">
+    <title>SortSnap | 講義写真の時間割自動フォルダ分けアプリ</title>
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;700;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -23,8 +21,9 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#features">機能</a></li>
-                <li><a href="#ai">AI仕分け</a></li>
+                <li><a href="#screens">画面紹介</a></li>
                 <li><a href="privacy.html">プライバシー</a></li>
+                <li><a href="terms.html">利用規約</a></li>
             </ul>
         </nav>
     </header>
@@ -34,24 +33,18 @@
             <div class="container hero-content">
                 <div class="hero-text">
                     <span class="badge">Lecture Photo Organizer</span>
-                    <h1>講義写真を撮るだけ。<br><span class="gradient-text">AIが自動で仕分け。</span></h1>
-                    <p>SortSnapは、板書やスライドの写真を高度なAIが授業ごとに自動で仕分け・整理するアプリです。整理の手間をゼロにし、テスト前の復習をこれまでにないほどスマートにします。</p>
+                    <h1>講義写真を撮るだけ。<br><span class="gradient-text">時間割に自動整理。</span></h1>
+                    <p>SortSnapは、登録した時間割のスケジュール（曜日・時限）と自動で連動し、撮影した講義写真を科目ごとのフォルダにスマートに仕分けるアプリです。手動整理の手間をゼロにし、テスト前の復習を驚くほど快適にします。</p>
                     <div class="cta-group">
-                        <a href="#" class="btn btn-primary">アプリをダウンロード</a>
+                        <a href="https://apps.apple.com/jp/app/sortsnap/id6758335041" target="_blank" class="btn btn-primary">App Storeからダウンロード</a>
                         <a href="#features" class="btn btn-secondary">詳しく見る</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="app-mockup">
-                        <img src="assets/logo.png?v=2" alt="App Preview" class="floating-logo">
-                        <div class="mockup-screen">
-                            <div class="mockup-header">AIが講義を自動判別</div>
-                            <div class="mockup-course">AIシステム論</div>
-                            <div class="mockup-attachments">
-                                <div class="item"></div>
-                                <div class="item"></div>
-                                <div class="item"></div>
-                            </div>
+                    <div class="hero-mockup-wrapper">
+                        <div class="device-mockup hero-mock">
+                            <div class="dynamic-island"></div>
+                            <img src="assets/screenshot_timetable.png" alt="時間割画面プレビュー">
                         </div>
                     </div>
                 </div>
@@ -60,42 +53,67 @@
 
         <section id="features" class="features">
             <div class="container">
-                <h2 class="section-title">Smart Organization</h2>
+                <div class="section-header">
+                    <span class="sub-badge">FEATURES</span>
+                    <h2 class="section-title">整理の手間をゼロにするスマート機能</h2>
+                </div>
                 <div class="feature-grid">
                     <div class="feature-card">
-                        <div class="icon">📸</div>
+                        <div class="icon-wrapper">📸</div>
                         <h3>写真を撮るだけ</h3>
-                        <p>板書やスライドをカメラで撮影。AIが内容を瞬時に読み取ります。</p>
+                        <p>授業中にアプリを立ち上げて板書やスライドを撮影するだけ。特別な設定をしなくてもすぐに使えます。</p>
                     </div>
                     <div class="feature-card">
-                        <div class="icon">📁</div>
-                        <h3>自動フォルダ分け</h3>
-                        <p>撮影した写真がどの講義のものかAIが自動で推測して分類。手動で整理する必要はありません。</p>
+                        <div class="icon-wrapper">📅</div>
+                        <h3>時間割と自動連動</h3>
+                        <p>撮影した現在の日時と登録済みの時間割スケジュールを自動で突き合わせ、適切な講義フォルダへ即座に分類します。</p>
                     </div>
                     <div class="feature-card">
-                        <div class="icon">📚</div>
-                        <h3>講義資料を一元管理</h3>
-                        <p>写真、動画、音声、PDF。あらゆる講義資料を科目ごとに整理して保存できます。</p>
+                        <div class="icon-wrapper">📁</div>
+                        <h3>完全ローカルで安全</h3>
+                        <p>インターネットへの画像送信は一切なし。すべての写真データは端末内で安全かつ高速に処理されます。</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="ai" class="ai-highlight">
-            <div class="container ai-flex">
-                <div class="ai-text">
-                    <h2>Powered by <span class="gradient-text">Advanced AI</span></h2>
-                    <p>最新の画像認識・解析技術を搭載。授業の文脈を理解し、あなたの学習リソースを魔法のように整理します。</p>
-                    <ul>
-                        <li>OCR技術による高精度なテキスト抽出</li>
-                        <li>文脈を理解する高度な自動分類エンジン</li>
-                        <li>Proプランでさらに強力な一括整理機能を</li>
-                    </ul>
+        <section id="screens" class="showcase">
+            <div class="container">
+                <div class="section-header white-text">
+                    <span class="sub-badge dark-bg">SCREENSHOTS</span>
+                    <h2 class="section-title">直感的でシンプルな操作画面</h2>
+                    <p class="section-subtitle">学生生活に馴染む、洗練されたモダンなインターフェースデザイン</p>
                 </div>
-                <div class="ai-visual">
-                    <div class="pulse-container">
-                        <div class="pulse"></div>
-                        <div class="ai-icon">AI</div>
+                <div class="showcase-grid">
+                    <div class="showcase-card">
+                        <div class="device-mockup">
+                            <div class="dynamic-island"></div>
+                            <img src="assets/screenshot_timetable.png" alt="時間割画面">
+                        </div>
+                        <div class="card-info">
+                            <h3>時間割管理</h3>
+                            <p>登録した時間割がグリッド形式で一目瞭然。授業ごとに異なるカラーを設定できます。</p>
+                        </div>
+                    </div>
+                    <div class="showcase-card">
+                        <div class="device-mockup">
+                            <div class="dynamic-island"></div>
+                            <img src="assets/screenshot_settings.png" alt="カメラ画面">
+                        </div>
+                        <div class="card-info">
+                            <h3>授業別カメラ</h3>
+                            <p>起動するだけで現在進行中の授業名を表示。シャッターを切るだけで自動振り分けされます。</p>
+                        </div>
+                    </div>
+                    <div class="showcase-card">
+                        <div class="device-mockup">
+                            <div class="dynamic-island"></div>
+                            <img src="assets/screenshot_camera.png" alt="設定画面">
+                        </div>
+                        <div class="card-info">
+                            <h3>フォルダ・設定管理</h3>
+                            <p>シラバスデータのインポートやCSV読み込みに対応。授業登録も一瞬で完了します。</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -110,13 +128,13 @@
                         <img src="assets/logo.png?v=2" alt="SortSnap Logo">
                         <span>SortSnap</span>
                     </div>
-                    <p>大学生の学習整理を、もっと快適に。</p>
+                    <p>大学生の学習整理を、もっと快適に。完全無料の写真管理アプリケーション。</p>
                 </div>
                 <div class="footer-links">
                     <h4>サポート</h4>
                     <ul>
                         <li><a href="privacy.html">プライバシーポリシー</a></li>
-                        <li><a href="#">利用規約</a></li>
+                        <li><a href="terms.html">利用規約</a></li>
                         <li><a href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc5w3t4XtqG7V3mVwvk8U7mFK-iJGW5YQdQvmb0PuOJAYy1Kw/viewform?usp=send_form&pli=1&authuser=0">お問い合わせ</a></li>
                     </ul>
                 </div>
