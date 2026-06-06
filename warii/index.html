@@ -17,11 +17,11 @@
             --primary-light: #818cf8;
             --primary-glow: rgba(99, 102, 241, 0.15);
             --secondary: #10b981;
-            --secondary-glow: rgba(16, 185, 129, 0.15);
-            --dark: #07090e;
+            --secondary-glow: rgba(16, 185, 129, 0.1);
+            --dark: #070a13;
             --dark-card: rgba(15, 23, 42, 0.65);
             --light: #f8fafc;
-            --text-main: #f8fafc;
+            --text-main: #f1f5f9;
             --text-muted: #94a3b8;
             --border: rgba(255, 255, 255, 0.08);
             --font-display: 'Outfit', 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif;
@@ -45,7 +45,7 @@
             overflow-x: hidden;
         }
 
-        /* Ambient glowing background */
+        /* Ambient Light Backgrounds */
         .ambient-bg {
             position: absolute;
             top: 0;
@@ -65,43 +65,43 @@
             left: -10%;
             width: 800px;
             height: 800px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, transparent 70%);
             filter: blur(120px);
-            animation: pulseGlow 14s infinite alternate;
+            animation: pulseGlow 12s infinite alternate;
         }
 
         .ambient-glow-2 {
             position: absolute;
-            top: 400px;
+            top: 500px;
             right: -10%;
-            width: 700px;
-            height: 700px;
-            background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, transparent 70%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, transparent 70%);
             filter: blur(100px);
-            animation: pulseGlow 18s infinite alternate-reverse;
+            animation: pulseGlow 15s infinite alternate-reverse;
         }
 
         @keyframes pulseGlow {
             0% { transform: scale(1) translate(0, 0); }
-            100% { transform: scale(1.1) translate(30px, 40px); }
+            100% { transform: scale(1.1) translate(30px, 20px); }
         }
 
         /* Container */
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
-        /* Navigation Header */
+        /* Header Navigation */
         header {
             padding: 24px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid var(--border);
-            backdrop-filter: blur(16px);
-            background: rgba(7, 9, 14, 0.85);
+            backdrop-filter: blur(12px);
+            background: rgba(7, 10, 19, 0.85);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -137,31 +137,23 @@
             text-decoration: none;
             font-size: 14px;
             font-weight: 600;
-            transition: all 0.2s;
+            transition: color 0.2s;
             padding: 8px 16px;
             border-radius: 99px;
-            border: 1px solid transparent;
         }
 
         nav a:hover {
             color: #fff;
             background: rgba(255, 255, 255, 0.05);
-            border-color: var(--border);
         }
 
         /* Hero Section */
         .hero {
-            padding: 100px 0 120px;
+            padding: 90px 0 60px;
             display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
+            grid-template-columns: 1.1fr 0.9fr;
             gap: 50px;
             align-items: center;
-            position: relative;
-        }
-
-        .hero-content {
-            text-align: left;
-            z-index: 5;
         }
 
         .badge {
@@ -187,12 +179,12 @@
         }
 
         .hero h1 {
-            font-size: 58px;
+            font-size: 50px;
             font-weight: 900;
             color: #ffffff;
             line-height: 1.15;
             margin-bottom: 24px;
-            letter-spacing: -2px;
+            letter-spacing: -1.5px;
         }
 
         .hero h1 span {
@@ -202,14 +194,12 @@
         }
 
         .hero p {
-            font-size: 18px;
+            font-size: 17px;
             color: var(--text-muted);
             margin-bottom: 40px;
             line-height: 1.7;
-            max-width: 580px;
         }
 
-        /* App Store Download Button (Apple Style) */
         .download-badge {
             display: inline-flex;
             align-items: center;
@@ -218,20 +208,20 @@
             padding: 12px 24px;
             border-radius: 14px;
             text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             transition: all 0.2s ease;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
         }
 
         .download-badge:hover {
             transform: translateY(-2px);
-            border-color: rgba(255, 255, 255, 0.4);
-            background: #111;
+            border-color: rgba(255, 255, 255, 0.35);
+            background: #0d0d0d;
         }
 
         .download-badge svg {
-            width: 28px;
-            height: 28px;
+            width: 26px;
+            height: 26px;
             margin-right: 12px;
             fill: currentColor;
         }
@@ -250,241 +240,242 @@
         }
 
         .download-badge-main {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
-            font-family: var(--font-display);
         }
 
-        /* 3D Showcase Mockup (Hero Right) */
-        .showcase-3d {
+        /* Showcase Phone Mockup */
+        .hero-mockup {
             position: relative;
-            height: 520px;
             display: flex;
             justify-content: center;
             align-items: center;
-            perspective: 1000px; /* Enable 3D rotation */
         }
 
-        /* Layered screens overlapping */
-        .layered-screen {
-            position: absolute;
-            width: 230px;
-            height: 480px;
-            border-radius: 28px;
-            border: 4px solid #1e293b;
-            box-shadow: 0 20px 45px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08);
+        .phone-frame {
+            width: 270px;
+            height: 550px;
             background: #000;
+            border-radius: 40px;
+            border: 10px solid #1e293b;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08);
+            position: relative;
             overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            cursor: pointer;
+            z-index: 10;
         }
 
-        .layered-screen img {
+        .phone-island {
+            width: 80px;
+            height: 22px;
+            background: #000;
+            border-radius: 10px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: #0f172a;
+            position: relative;
+        }
+
+        .phone-screen img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
-        }
-
-        /* Screen Reflections/Gloss Overlay */
-        .layered-screen::after {
-            content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 200%;
-            height: 100%;
-            background: linear-gradient(115deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 20%, transparent 40%);
-            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .phone-screen img.active {
+            opacity: 1;
             z-index: 5;
         }
 
-        /* Precise 3D Angles */
-        .screen-left {
-            transform: rotateY(25deg) rotateX(8deg) rotateZ(-6deg) translateX(-100px) translateZ(-50px);
-            z-index: 1;
-            opacity: 0.85;
-        }
-
-        .screen-center {
-            transform: rotateY(20deg) rotateX(8deg) rotateZ(-4deg) translateZ(50px);
-            z-index: 3;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.7), 0 0 0 2px var(--primary);
-        }
-
-        .screen-right {
-            transform: rotateY(18deg) rotateX(8deg) rotateZ(-2deg) translateX(110px) translateZ(-40px);
-            z-index: 2;
-            opacity: 0.9;
-        }
-
-        /* Floating Feature Tags */
-        .floating-tag {
+        .mockup-glow {
             position: absolute;
-            background: rgba(15, 23, 42, 0.85);
-            border: 1px solid var(--primary);
-            backdrop-filter: blur(8px);
-            padding: 8px 14px;
-            border-radius: 12px;
-            font-size: 11px;
-            font-weight: 700;
-            color: #fff;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            width: 380px;
+            height: 380px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 60%);
+            z-index: 1;
             pointer-events: none;
-            z-index: 10;
-            animation: floatTag 6s ease-in-out infinite alternate;
         }
 
-        .tag-1 {
-            top: 40px;
-            left: -20px;
-            border-color: var(--secondary);
-        }
-
-        .tag-2 {
-            bottom: 60px;
-            right: -25px;
-        }
-
-        @keyframes floatTag {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-8px); }
-        }
-
-        /* Hover animations for layered screens */
-        .showcase-3d:hover .screen-left {
-            transform: rotateY(15deg) rotateX(4deg) translateX(-130px) translateZ(0px);
-            opacity: 0.95;
-        }
-
-        .showcase-3d:hover .screen-center {
-            transform: rotateY(10deg) rotateX(4deg) translateZ(80px) scale(1.02);
-        }
-
-        .showcase-3d:hover .screen-right {
-            transform: rotateY(8deg) rotateX(4deg) translateX(140px) translateZ(10px);
-            opacity: 1;
-        }
-
-        /* Interactive Showcase Grid */
-        .interactive-grid {
-            padding: 100px 0;
+        /* Interactive Feature Switcher */
+        .interactive-showcase {
+            padding: 80px 0;
             border-top: 1px solid var(--border);
         }
 
-        .showcase-row {
+        .showcase-container {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
-            gap: 80px;
+            gap: 60px;
             align-items: center;
-            margin-bottom: 100px;
+            margin-top: 40px;
         }
 
-        .showcase-row:nth-child(even) {
-            grid-template-columns: 0.9fr 1.1fr;
+        .feature-tabs {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
 
-        .showcase-row:nth-child(even) .showcase-text-col {
-            order: 2;
-        }
-
-        .showcase-text-col {
+        .tab-item {
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 20px 24px;
             text-align: left;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
         }
 
-        .showcase-num {
-            font-size: 14px;
-            font-weight: 800;
+        .tab-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--primary);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tab-item.active {
+            border-color: rgba(99, 102, 241, 0.4);
+            background: rgba(99, 102, 241, 0.05);
+            transform: translateX(8px);
+        }
+
+        .tab-item.active::before {
+            opacity: 1;
+        }
+
+        .tab-icon {
+            font-size: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
             color: var(--primary-light);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 12px;
+            transition: background 0.3s;
         }
 
-        .showcase-text-col h3 {
-            font-size: 34px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            margin-bottom: 20px;
+        .tab-item.active .tab-icon {
+            background: var(--primary);
             color: #fff;
         }
 
-        .showcase-text-col p {
+        .tab-text h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #ffffff;
+        }
+
+        .tab-text p {
+            font-size: 14px;
             color: var(--text-muted);
-            font-size: 16px;
-            line-height: 1.7;
+            line-height: 1.5;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(99, 102, 241, 0.3);
+            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.05);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            background: rgba(99, 102, 241, 0.1);
+            color: #a5b4fc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
             margin-bottom: 24px;
         }
 
-        .feature-bullets {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+        .card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
-        .feature-bullets li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-            color: var(--text-main);
-            font-weight: 600;
+        .card p {
+            color: var(--text-muted);
+            font-size: 14.5px;
+            line-height: 1.6;
         }
 
-        .feature-bullets li span {
-            color: var(--secondary);
-            font-size: 16px;
-        }
-
-        /* Screenshot card inside showcase rows */
-        .showcase-img-col {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .device-wrapper {
-            background: radial-gradient(circle at top, rgba(255, 255, 255, 0.05) 0%, transparent 80%);
-            border: 1px solid var(--border);
-            border-radius: 36px;
-            padding: 24px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-            transition: all 0.4s ease;
-        }
-
-        .device-wrapper:hover {
-            border-color: rgba(99,102,241,0.3);
-            box-shadow: 0 40px 80px rgba(99, 102, 241, 0.08);
-            transform: translateY(-4px);
-        }
-
-        .device-inner {
-            width: 250px;
-            height: 510px;
-            border-radius: 28px;
-            border: 4px solid #1e293b;
-            background: #000;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .device-inner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Bottom Security Callout */
+        /* E2EE Callout Box */
         .security-spotlight {
-            background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.12) 0%, rgba(16, 185, 129, 0.04) 100%);
-            border: 1px solid rgba(99, 102, 241, 0.2);
+            background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.08) 0%, rgba(16, 185, 129, 0.02) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.18);
             border-radius: 28px;
             padding: 50px;
             margin: 60px 0;
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
             backdrop-filter: blur(8px);
@@ -504,7 +495,7 @@
         }
 
         .security-content h3 {
-            font-size: 32px;
+            font-size: 30px;
             font-weight: 800;
             margin-bottom: 18px;
             letter-spacing: -0.5px;
@@ -512,7 +503,7 @@
 
         .security-content p {
             color: var(--text-muted);
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.7;
         }
 
@@ -523,11 +514,11 @@
         }
 
         .lock-container {
-            width: 140px;
-            height: 140px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            background: rgba(99, 102, 241, 0.05);
-            border: 2px dashed rgba(99, 102, 241, 0.2);
+            background: rgba(99, 102, 241, 0.03);
+            border: 2px dashed rgba(99, 102, 241, 0.15);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -540,16 +531,15 @@
         }
 
         .lock-icon {
-            width: 70px;
-            height: 70px;
+            width: 65px;
+            height: 65px;
             background: var(--dark);
             border: 2px solid var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            transform: rotate(-360deg);
+            font-size: 28px;
             animation: spinCounter 30s linear infinite;
         }
 
@@ -568,7 +558,7 @@
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 16px;
         }
 
         .faq-item {
@@ -579,23 +569,23 @@
         }
 
         .faq-item h4 {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #fff;
         }
 
         .faq-item p {
             color: var(--text-muted);
-            font-size: 15px;
+            font-size: 14.5px;
             line-height: 1.6;
         }
 
         /* Footer */
         footer {
             border-top: 1px solid var(--border);
-            padding: 60px 0 40px;
-            background: #04060a;
+            padding: 50px 0 30px;
+            background: #05070e;
         }
 
         .footer-content {
@@ -603,23 +593,23 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 24px;
         }
 
         .copyright {
             color: var(--text-muted);
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .footer-links {
             display: flex;
-            gap: 30px;
+            gap: 24px;
         }
 
         .footer-links a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             transition: color 0.2s;
         }
 
@@ -629,11 +619,10 @@
 
         /* Responsive Design */
         @media (max-width: 968px) {
-            .hero {
+            .hero, .showcase-container {
                 grid-template-columns: 1fr;
                 text-align: center;
-                gap: 60px;
-                padding-top: 60px;
+                gap: 40px;
             }
             .hero-content {
                 text-align: center;
@@ -642,29 +631,18 @@
                 align-items: center;
             }
             .hero h1 {
-                font-size: 42px;
-            }
-            .showcase-row, .showcase-row:nth-child(even) {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
-            .showcase-row:nth-child(even) .showcase-text-col {
-                order: 0;
-            }
-            .showcase-text-col {
-                text-align: center;
-            }
-            .feature-bullets {
-                align-items: center;
+                font-size: 38px;
             }
             .security-spotlight {
                 grid-template-columns: 1fr;
-                padding: 36px;
+                padding: 32px;
                 text-align: center;
             }
             .security-visual {
                 order: -1;
+            }
+            .tab-item {
+                transform: none !important;
             }
         }
     </style>
@@ -676,7 +654,7 @@
     </div>
 
     <div class="container">
-        <!-- Navigation Header -->
+        <!-- Navigation -->
         <header>
             <a href="#" class="logo">warii<span class="logo-dot"></span></a>
             <nav>
@@ -684,15 +662,15 @@
             </nav>
         </header>
 
-        <!-- Hero Section -->
+        <!-- Hero -->
         <section class="hero">
             <div class="hero-content">
                 <div class="badge">
                     <div class="badge-pulse"></div>
                     iOS App Tracking Transparency対応済
                 </div>
-                <h1>割り勘と集金を、<br><span>もっとスマートに、美しく。</span></h1>
-                <p>飲み会や旅行の面倒な立替計算から、友達への集金連絡までを一瞬で解決。E2EE（エンドツーエンド暗号化）による極めて強力なプライバシー保護技術を搭載した、これからの割り勘管理アプリ。</p>
+                <h1>割り勘と集金を、<br><span>もっとかんたん、美しく。</span></h1>
+                <p>面倒な立替計算から、友達への清算連絡までを一瞬で解決。E2EE（エンドツーエンド暗号化）による極めて強力なプライバシー保護技術を搭載した、これからの割り勘管理アプリ「warii」。</p>
                 
                 <a href="#" class="download-badge">
                     <svg viewBox="0 0 384 512">
@@ -705,97 +683,112 @@
                 </a>
             </div>
 
-            <!-- 3D Perspective Screen Layering -->
             <div class="hero-mockup">
-                <div class="showcase-3d">
-                    <div class="floating-tag tag-1">🔒 E2EE暗号化保護</div>
-                    <div class="floating-tag tag-2">⚡ 1タップコピー</div>
-                    
-                    <div class="layered-screen screen-left">
-                        <img src="assets/IMG_2376.jpeg" alt="warii app screen left">
-                    </div>
-                    <div class="layered-screen screen-center">
-                        <img src="assets/IMG_2377.jpeg" alt="warii app screen center">
-                    </div>
-                    <div class="layered-screen screen-right">
-                        <img src="assets/IMG_2380.jpeg" alt="warii app screen right">
+                <div class="phone-frame">
+                    <div class="phone-island"></div>
+                    <div class="phone-screen">
+                        <img class="hero-img active" src="assets/IMG_2376.jpeg" alt="warii screen 1">
+                        <img class="hero-img" src="assets/IMG_2377.jpeg" alt="warii screen 2">
+                        <img class="hero-img" src="assets/IMG_2378.jpeg" alt="warii screen 3">
+                        <img class="hero-img" src="assets/IMG_2379.jpeg" alt="warii screen 4">
+                        <img class="hero-img" src="assets/IMG_2380.jpeg" alt="warii screen 5">
                     </div>
                 </div>
+                <div class="mockup-glow"></div>
             </div>
         </section>
 
-        <!-- Interactive Showcase Grid -->
-        <section class="interactive-grid">
+        <!-- Interactive Feature Switcher (Replaces raw screenshots) -->
+        <section class="interactive-showcase">
             <div class="section-title">
-                <h2>warii が提供する機能とデザイン</h2>
-                <p>直感的に使えるシンプルな機能で、お支払いを円滑に進めます。</p>
+                <h2>主要機能とスクリーンショット</h2>
+                <p>タップするだけで各機能の詳細と実際の画面構成を確認できます。</p>
             </div>
 
-            <!-- Row 1: Dashboard / Home -->
-            <div class="showcase-row">
-                <div class="showcase-text-col">
-                    <div class="showcase-num">01 / DASHBOARD</div>
-                    <h3>グループ一覧と直感的な作成</h3>
-                    <p>作成した割り勘グループが一覧で表示され、進捗や総支出が一目で確認できます。合宿や旅行など、イベントごとに切り替えて管理が可能です。</p>
-                    <ul class="feature-bullets">
-                        <li><span>✔</span> アカウント不要で即座に開始可能</li>
-                        <li><span>✔</span> グループごとに為替レートを設定可能</li>
-                        <li><span>✔</span> 送金が完了したグループはワンタップで整理</li>
-                    </ul>
-                </div>
-                <div class="showcase-img-col">
-                    <div class="device-wrapper">
-                        <div class="device-inner">
-                            <img src="assets/IMG_2376.jpeg" alt="warii dashboard screenshot">
+            <div class="showcase-container">
+                <div class="feature-tabs">
+                    <div class="tab-item active" onclick="switchShowcase(0)">
+                        <div class="tab-icon">🏠</div>
+                        <div class="tab-text">
+                            <h3>グループホーム画面</h3>
+                            <p>イベントの全体支出、現在の清算状況がひと目で直感的に把握できます。</p>
+                        </div>
+                    </div>
+                    <div class="tab-item" onclick="switchShowcase(1)">
+                        <div class="tab-icon">💳</div>
+                        <div class="tab-text">
+                            <h3>支払方法・送金メモの登録</h3>
+                            <p>PayPayリンクや銀行振込情報を安全に保管。口座情報は端末内で自動暗号化されます。</p>
+                        </div>
+                    </div>
+                    <div class="tab-item" onclick="switchShowcase(2)">
+                        <div class="tab-icon">➕</div>
+                        <div class="tab-text">
+                            <h3>直感的な支出追加</h3>
+                            <p>立替金額の入力、対象者の選択を簡単に行えます。為替レート機能で海外旅行もサポート。</p>
+                        </div>
+                    </div>
+                    <div class="tab-item" onclick="switchShowcase(3)">
+                        <div class="tab-icon">⚖️</div>
+                        <div class="tab-text">
+                            <h3>最小精算ルート</h3>
+                            <p>誰から誰へ送金すれば一番送金回数が減るかを自動算出。無駄な支払いを省きます。</p>
+                        </div>
+                    </div>
+                    <div class="tab-item" onclick="switchShowcase(4)">
+                        <div class="tab-icon">📋</div>
+                        <div class="tab-text">
+                            <h3>ワンタップコピー＆送金</h3>
+                            <p>友達のPayPayリンクや振込口座のメモを1タップでコピーし、そのまま送金が行えます。</p>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Row 2: Details / Input -->
-            <div class="showcase-row">
-                <div class="showcase-text-col">
-                    <div class="showcase-num">02 / CALCULATION</div>
-                    <h3>複雑な立替計算も一瞬で解決</h3>
-                    <p>誰がいくら支払ったかを記録するだけで、全員の最終的な精算金額（誰から誰へ、いくら送金すればいいか）を最小限の送金回数で自動算出します。</p>
-                    <ul class="feature-bullets">
-                        <li><span>✔</span> 均等割りから個別の比率（パーセンテージ）割りまで対応</li>
-                        <li><span>✔</span> 割り勘から特定メンバーを除外する設定も可能</li>
-                        <li><span>✔</span> 変更内容や出費はリアルタイムにクラウド同期</li>
-                    </ul>
-                </div>
-                <div class="showcase-img-col">
-                    <div class="device-wrapper">
-                        <div class="device-inner">
-                            <img src="assets/IMG_2377.jpeg" alt="warii calculation screenshot">
+                <div class="hero-mockup">
+                    <div class="phone-frame">
+                        <div class="phone-island"></div>
+                        <div class="phone-screen">
+                            <img class="showcase-img active" src="assets/IMG_2376.jpeg" alt="warii feature 1">
+                            <img class="showcase-img" src="assets/IMG_2377.jpeg" alt="warii feature 2">
+                            <img class="showcase-img" src="assets/IMG_2378.jpeg" alt="warii feature 3">
+                            <img class="showcase-img" src="assets/IMG_2379.jpeg" alt="warii feature 4">
+                            <img class="showcase-img" src="assets/IMG_2380.jpeg" alt="warii feature 5">
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Row 3: PayPay & Notes -->
-            <div class="showcase-row">
-                <div class="showcase-text-col">
-                    <div class="showcase-num">03 / PAYMENT SHARING</div>
-                    <h3>送金先を1タップでかんたん共有</h3>
-                    <p>支払先となるメンバーのPayPayリンクをタップして公式アプリを呼び出したり、銀行口座情報を1タップで安全にコピーできます。</p>
-                    <ul class="feature-bullets">
-                        <li><span>✔</span> 面倒な口座番号の手入力・転記のミスを防ぎます</li>
-                        <li><span>✔</span> PayPay・振込メモの優先順位を登録可能</li>
-                        <li><span>✔</span> アプリを持たないメンバーへもWebリンクで共有可能</li>
-                    </ul>
-                </div>
-                <div class="showcase-img-col">
-                    <div class="device-wrapper">
-                        <div class="device-inner">
-                            <img src="assets/IMG_2380.jpeg" alt="warii payment sharing screenshot">
-                        </div>
-                    </div>
+                    <div class="mockup-glow"></div>
                 </div>
             </div>
         </section>
 
-        <!-- Security Callout -->
+        <!-- Features Grid -->
+        <section class="features">
+            <div class="section-title">
+                <h2>warii が提供する新しい体験</h2>
+                <p>ただ計算するだけでなく、全員が「気持ちよく」精算できる仕組みを作りました。</p>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3>スマート精算ルート算出</h3>
+                    <p>誰がいくら立替えたかをまとめて登録するだけで、最終的な送金回数が最も少なくなるよう自動で精算ルートを割り出します。</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🔗</div>
+                    <h3>PayPay送金＆メモ共有</h3>
+                    <p>相手のPayPay送金リンクをタップして瞬時に送金したり、銀行口座などの支払メモを1タップでコピーして簡単・スマートに清算が行えます。</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🌐</div>
+                    <h3>Webビューアで簡単共有</h3>
+                    <p>アプリをインストールしていない友達にも、共有URLを送るだけでブラウザから精算結果や支払い先情報をコピー・確認してもらえます。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Spotlight -->
         <section class="security-spotlight">
             <div class="security-content">
                 <div class="security-badge">🔒 高度な暗号化保護</div>
@@ -828,7 +821,7 @@
                     <p>サーバーデータの保存期間は、最終更新（追加・編集・同期）から30日間です。30日を過ぎるとサーバーから自動で完全削除されます。</p>
                 </div>
                 <div class="faq-item">
-                    <h4>登録したお支払メモは本当に安全ですか？</h4>
+                    <h4>銀行口座などを登録しても本当に安全ですか？</h4>
                     <p>はい、すべての支払情報はエンドツーエンド（E2EE）で強力に暗号化されてからサーバーに送信されます。サーバー管理者もデータを見ることはできない設計ですのでご安心ください。</p>
                 </div>
             </div>
@@ -846,5 +839,52 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Hero Rotator
+        const heroImgs = document.querySelectorAll('.hero-img');
+        let heroIdx = 0;
+        setInterval(() => {
+            heroImgs[heroIdx].classList.remove('active');
+            heroIdx = (heroIdx + 1) % heroImgs.length;
+            heroImgs[heroIdx].classList.add('active');
+        }, 4000);
+
+        // Showcase Switcher
+        const tabItems = document.querySelectorAll('.tab-item');
+        const showcaseImgs = document.querySelectorAll('.showcase-img');
+        let autoSwitchInterval;
+
+        function switchShowcase(index) {
+            tabItems.forEach(item => item.classList.remove('active'));
+            showcaseImgs.forEach(img => img.classList.remove('active'));
+
+            tabItems[index].classList.add('active');
+            showcaseImgs[index].classList.add('active');
+            
+            resetAutoSwitch();
+        }
+
+        // Auto Switch Showcase Feature every 6 seconds
+        function startAutoSwitch() {
+            autoSwitchInterval = setInterval(() => {
+                let activeIdx = 0;
+                tabItems.forEach((item, idx) => {
+                    if (item.classList.contains('active')) {
+                        activeIdx = idx;
+                    }
+                });
+                const nextIdx = (activeIdx + 1) % tabItems.length;
+                switchShowcase(nextIdx);
+            }, 6000);
+        }
+
+        function resetAutoSwitch() {
+            clearInterval(autoSwitchInterval);
+            startAutoSwitch();
+        }
+
+        startAutoSwitch();
+    </script>
 </body>
 </html>
