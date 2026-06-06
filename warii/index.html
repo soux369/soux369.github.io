@@ -14,13 +14,14 @@
     <style>
         :root {
             --primary: #6366f1;
+            --primary-light: #818cf8;
             --primary-glow: rgba(99, 102, 241, 0.15);
             --secondary: #10b981;
-            --secondary-glow: rgba(16, 185, 129, 0.1);
-            --dark: #090d16;
-            --dark-card: rgba(17, 24, 39, 0.7);
+            --secondary-glow: rgba(16, 185, 129, 0.15);
+            --dark: #07090e;
+            --dark-card: rgba(15, 23, 42, 0.65);
             --light: #f8fafc;
-            --text-main: #f1f5f9;
+            --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --border: rgba(255, 255, 255, 0.08);
             --font-display: 'Outfit', 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif;
@@ -44,7 +45,7 @@
             overflow-x: hidden;
         }
 
-        /* Abstract Premium Ambient Light Background */
+        /* Ambient glowing background */
         .ambient-bg {
             position: absolute;
             top: 0;
@@ -52,7 +53,7 @@
             transform: translateX(-50%);
             width: 100vw;
             height: 100%;
-            max-height: 1800px;
+            max-height: 2000px;
             overflow: hidden;
             z-index: -2;
             pointer-events: none;
@@ -61,28 +62,28 @@
         .ambient-glow-1 {
             position: absolute;
             top: -200px;
-            left: -20%;
+            left: -10%;
             width: 800px;
             height: 800px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
-            filter: blur(100px);
-            animation: pulseGlow 12s infinite alternate;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, transparent 70%);
+            filter: blur(120px);
+            animation: pulseGlow 14s infinite alternate;
         }
 
         .ambient-glow-2 {
             position: absolute;
-            top: 300px;
+            top: 400px;
             right: -10%;
             width: 700px;
             height: 700px;
-            background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
-            filter: blur(80px);
-            animation: pulseGlow 15s infinite alternate-reverse;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, transparent 70%);
+            filter: blur(100px);
+            animation: pulseGlow 18s infinite alternate-reverse;
         }
 
         @keyframes pulseGlow {
             0% { transform: scale(1) translate(0, 0); }
-            100% { transform: scale(1.15) translate(40px, 30px); }
+            100% { transform: scale(1.1) translate(30px, 40px); }
         }
 
         /* Container */
@@ -92,19 +93,18 @@
             padding: 0 24px;
         }
 
-        /* Header Navigation */
+        /* Navigation Header */
         header {
             padding: 24px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid var(--border);
-            backdrop-filter: blur(12px);
-            background: rgba(9, 13, 22, 0.8);
+            backdrop-filter: blur(16px);
+            background: rgba(7, 9, 14, 0.85);
             position: sticky;
             top: 0;
             z-index: 100;
-            transition: all 0.3s;
         }
 
         .logo {
@@ -137,7 +137,7 @@
             text-decoration: none;
             font-size: 14px;
             font-weight: 600;
-            transition: color 0.2s;
+            transition: all 0.2s;
             padding: 8px 16px;
             border-radius: 99px;
             border: 1px solid transparent;
@@ -151,15 +151,17 @@
 
         /* Hero Section */
         .hero {
-            padding: 100px 0 80px;
+            padding: 100px 0 120px;
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 60px;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 50px;
             align-items: center;
+            position: relative;
         }
 
         .hero-content {
             text-align: left;
+            z-index: 5;
         }
 
         .badge {
@@ -185,12 +187,12 @@
         }
 
         .hero h1 {
-            font-size: 54px;
+            font-size: 58px;
             font-weight: 900;
             color: #ffffff;
             line-height: 1.15;
             margin-bottom: 24px;
-            letter-spacing: -1.5px;
+            letter-spacing: -2px;
         }
 
         .hero h1 span {
@@ -204,6 +206,7 @@
             color: var(--text-muted);
             margin-bottom: 40px;
             line-height: 1.7;
+            max-width: 580px;
         }
 
         /* App Store Download Button (Apple Style) */
@@ -252,203 +255,236 @@
             font-family: var(--font-display);
         }
 
-        /* Device Showcase Mockup */
-        .hero-mockup {
+        /* 3D Showcase Mockup (Hero Right) */
+        .showcase-3d {
             position: relative;
+            height: 520px;
             display: flex;
             justify-content: center;
             align-items: center;
+            perspective: 1000px; /* Enable 3D rotation */
         }
 
-        .phone-frame {
-            width: 280px;
-            height: 570px;
-            background: #000;
-            border-radius: 44px;
-            border: 12px solid #1e293b;
-            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-            z-index: 10;
-        }
-
-        /* iPhone Dynamic Island Mock */
-        .phone-island {
-            width: 90px;
-            height: 24px;
-            background: #000;
-            border-radius: 12px;
+        /* Layered screens overlapping */
+        .layered-screen {
             position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 100;
-        }
-
-        .phone-screen {
-            width: 100%;
-            height: 100%;
+            width: 230px;
+            height: 480px;
+            border-radius: 28px;
+            border: 4px solid #1e293b;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08);
             background: #000;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
         }
 
-        .phone-screen img {
+        .layered-screen img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            animation: fadeTransition 15s infinite;
-        }
-
-        /* Decorative Rings behind phone */
-        .mockup-glow {
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, transparent 60%);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        /* Screenshot Slider / Gallery Section */
-        .gallery-section {
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .gallery-section h2 {
-            font-size: 36px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            letter-spacing: -1px;
-        }
-
-        .gallery-section p {
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 50px;
-        }
-
-        .gallery-wrapper {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            padding: 20px 10px 40px;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: thin;
-            scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
-        }
-
-        .gallery-wrapper::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        .gallery-wrapper::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 10px;
-        }
-
-        .gallery-card {
-            flex: 0 0 230px;
-            scroll-snap-align: center;
-            border-radius: 24px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s, border-color 0.3s;
-            cursor: pointer;
-            background: #000;
-        }
-
-        .gallery-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary);
-        }
-
-        .gallery-card img {
-            width: 100%;
-            height: auto;
             display: block;
         }
 
-        /* Features Section */
-        .features {
-            padding: 80px 0;
+        /* Screen Reflections/Gloss Overlay */
+        .layered-screen::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(115deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 20%, transparent 40%);
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        /* Precise 3D Angles */
+        .screen-left {
+            transform: rotateY(25deg) rotateX(8deg) rotateZ(-6deg) translateX(-100px) translateZ(-50px);
+            z-index: 1;
+            opacity: 0.85;
+        }
+
+        .screen-center {
+            transform: rotateY(20deg) rotateX(8deg) rotateZ(-4deg) translateZ(50px);
+            z-index: 3;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.7), 0 0 0 2px var(--primary);
+        }
+
+        .screen-right {
+            transform: rotateY(18deg) rotateX(8deg) rotateZ(-2deg) translateX(110px) translateZ(-40px);
+            z-index: 2;
+            opacity: 0.9;
+        }
+
+        /* Floating Feature Tags */
+        .floating-tag {
+            position: absolute;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid var(--primary);
+            backdrop-filter: blur(8px);
+            padding: 8px 14px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            pointer-events: none;
+            z-index: 10;
+            animation: floatTag 6s ease-in-out infinite alternate;
+        }
+
+        .tag-1 {
+            top: 40px;
+            left: -20px;
+            border-color: var(--secondary);
+        }
+
+        .tag-2 {
+            bottom: 60px;
+            right: -25px;
+        }
+
+        @keyframes floatTag {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-8px); }
+        }
+
+        /* Hover animations for layered screens */
+        .showcase-3d:hover .screen-left {
+            transform: rotateY(15deg) rotateX(4deg) translateX(-130px) translateZ(0px);
+            opacity: 0.95;
+        }
+
+        .showcase-3d:hover .screen-center {
+            transform: rotateY(10deg) rotateX(4deg) translateZ(80px) scale(1.02);
+        }
+
+        .showcase-3d:hover .screen-right {
+            transform: rotateY(8deg) rotateX(4deg) translateX(140px) translateZ(10px);
+            opacity: 1;
+        }
+
+        /* Interactive Showcase Grid */
+        .interactive-grid {
+            padding: 100px 0;
             border-top: 1px solid var(--border);
         }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 38px;
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 16px;
-        }
-
-        .section-title p {
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .grid {
+        .showcase-row {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 100px;
         }
 
-        .card {
-            background: var(--dark-card);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 40px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+        .showcase-row:nth-child(even) {
+            grid-template-columns: 0.9fr 1.1fr;
         }
 
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(99, 102, 241, 0.3);
-            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.05);
+        .showcase-row:nth-child(even) .showcase-text-col {
+            order: 2;
         }
 
-        .card-icon {
-            width: 54px;
-            height: 54px;
-            border-radius: 16px;
-            background: rgba(99, 102, 241, 0.1);
+        .showcase-text-col {
+            text-align: left;
+        }
+
+        .showcase-num {
+            font-size: 14px;
+            font-weight: 800;
             color: var(--primary-light);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .showcase-text-col h3 {
+            font-size: 34px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .showcase-text-col p {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .feature-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .feature-bullets li {
             display: flex;
             align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .feature-bullets li span {
+            color: var(--secondary);
+            font-size: 16px;
+        }
+
+        /* Screenshot card inside showcase rows */
+        .showcase-img-col {
+            display: flex;
             justify-content: center;
-            font-size: 28px;
-            margin-bottom: 28px;
-            color: #a5b4fc;
+            align-items: center;
         }
 
-        .card h3 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 14px;
+        .device-wrapper {
+            background: radial-gradient(circle at top, rgba(255, 255, 255, 0.05) 0%, transparent 80%);
+            border: 1px solid var(--border);
+            border-radius: 36px;
+            padding: 24px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
         }
 
-        .card p {
-            color: var(--text-muted);
-            font-size: 15px;
-            line-height: 1.7;
+        .device-wrapper:hover {
+            border-color: rgba(99,102,241,0.3);
+            box-shadow: 0 40px 80px rgba(99, 102, 241, 0.08);
+            transform: translateY(-4px);
         }
 
-        /* Premium Security Focus Callout */
+        .device-inner {
+            width: 250px;
+            height: 510px;
+            border-radius: 28px;
+            border: 4px solid #1e293b;
+            background: #000;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .device-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Bottom Security Callout */
         .security-spotlight {
-            background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.1) 0%, rgba(16, 185, 129, 0.03) 100%);
+            background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.12) 0%, rgba(16, 185, 129, 0.04) 100%);
             border: 1px solid rgba(99, 102, 241, 0.2);
             border-radius: 28px;
             padding: 50px;
-            margin: 80px 0;
+            margin: 60px 0;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.1fr 0.9fr;
             gap: 40px;
             align-items: center;
             backdrop-filter: blur(8px);
@@ -513,7 +549,7 @@
             align-items: center;
             justify-content: center;
             font-size: 32px;
-            transform: rotate(-360deg); /* Counteract spin */
+            transform: rotate(-360deg);
             animation: spinCounter 30s linear infinite;
         }
 
@@ -559,7 +595,7 @@
         footer {
             border-top: 1px solid var(--border);
             padding: 60px 0 40px;
-            background: #060910;
+            background: #04060a;
         }
 
         .footer-content {
@@ -591,29 +627,36 @@
             color: #fff;
         }
 
-        /* Animation for phone mockup images switching */
-        @keyframes fadeTransition {
-            0%, 15% { opacity: 1; }
-            20%, 35% { opacity: 0; } /* Triggers dynamic transition */
-            40%, 55% { opacity: 0; }
-            60%, 75% { opacity: 0; }
-            80%, 95% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
         /* Responsive Design */
         @media (max-width: 968px) {
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
-                gap: 50px;
+                gap: 60px;
                 padding-top: 60px;
             }
             .hero-content {
                 text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
             .hero h1 {
                 font-size: 42px;
+            }
+            .showcase-row, .showcase-row:nth-child(even) {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            .showcase-row:nth-child(even) .showcase-text-col {
+                order: 0;
+            }
+            .showcase-text-col {
+                text-align: center;
+            }
+            .feature-bullets {
+                align-items: center;
             }
             .security-spotlight {
                 grid-template-columns: 1fr;
@@ -633,7 +676,7 @@
     </div>
 
     <div class="container">
-        <!-- Navigation -->
+        <!-- Navigation Header -->
         <header>
             <a href="#" class="logo">warii<span class="logo-dot"></span></a>
             <nav>
@@ -641,15 +684,15 @@
             </nav>
         </header>
 
-        <!-- Hero -->
+        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
                 <div class="badge">
                     <div class="badge-pulse"></div>
                     iOS App Tracking Transparency対応済
                 </div>
-                <h1>割り勘と集金を、<br><span>もっとかんたん、美しく。</span></h1>
-                <p>面倒な立替計算から、友達への清算連絡までを一瞬で解決。E2EE（エンドツーエンド暗号化）による極めて強力なプライバシー保護技術を搭載した、これからの割り勘管理アプリ「warii」。</p>
+                <h1>割り勘と集金を、<br><span>もっとスマートに、美しく。</span></h1>
+                <p>飲み会や旅行の面倒な立替計算から、友達への集金連絡までを一瞬で解決。E2EE（エンドツーエンド暗号化）による極めて強力なプライバシー保護技術を搭載した、これからの割り勘管理アプリ。</p>
                 
                 <a href="#" class="download-badge">
                     <svg viewBox="0 0 384 512">
@@ -662,66 +705,92 @@
                 </a>
             </div>
 
+            <!-- 3D Perspective Screen Layering -->
             <div class="hero-mockup">
-                <div class="phone-frame">
-                    <div class="phone-island"></div>
-                    <div class="phone-screen">
-                        <!-- Rotates between the provided screenshots via CSS -->
-                        <img id="rotator" src="assets/IMG_2376.jpeg" alt="warii app screenshot">
+                <div class="showcase-3d">
+                    <div class="floating-tag tag-1">🔒 E2EE暗号化保護</div>
+                    <div class="floating-tag tag-2">⚡ 1タップコピー</div>
+                    
+                    <div class="layered-screen screen-left">
+                        <img src="assets/IMG_2376.jpeg" alt="warii app screen left">
+                    </div>
+                    <div class="layered-screen screen-center">
+                        <img src="assets/IMG_2377.jpeg" alt="warii app screen center">
+                    </div>
+                    <div class="layered-screen screen-right">
+                        <img src="assets/IMG_2380.jpeg" alt="warii app screen right">
                     </div>
                 </div>
-                <div class="mockup-glow"></div>
             </div>
         </section>
 
-        <!-- Screenshot Slider -->
-        <section class="gallery-section">
-            <h2>プロダクトギャラリー</h2>
-            <p>シンプルかつ細部までこだわり抜いたインターフェースで、誰でも迷わず操作可能。</p>
-            
-            <div class="gallery-wrapper">
-                <div class="gallery-card" onclick="setRotator(0)">
-                    <img src="assets/IMG_2376.jpeg" alt="スクリーンショット 1">
-                </div>
-                <div class="gallery-card" onclick="setRotator(1)">
-                    <img src="assets/IMG_2377.jpeg" alt="スクリーンショット 2">
-                </div>
-                <div class="gallery-card" onclick="setRotator(2)">
-                    <img src="assets/IMG_2378.jpeg" alt="スクリーンショット 3">
-                </div>
-                <div class="gallery-card" onclick="setRotator(3)">
-                    <img src="assets/IMG_2379.jpeg" alt="スクリーンショット 4">
-                </div>
-                <div class="gallery-card" onclick="setRotator(4)">
-                    <img src="assets/IMG_2380.jpeg" alt="スクリーンショット 5">
-                </div>
-            </div>
-        </section>
-
-        <!-- Features -->
-        <section class="features">
+        <!-- Interactive Showcase Grid -->
+        <section class="interactive-grid">
             <div class="section-title">
-                <h2>warii が提供する新しい体験</h2>
-                <p>ただ計算するだけでなく、全員が「気持ちよく」精算できる仕組みを作りました。</p>
+                <h2>warii が提供する機能とデザイン</h2>
+                <p>直感的に使えるシンプルな機能で、お支払いを円滑に進めます。</p>
             </div>
 
-            <div class="grid">
-                <div class="card">
-                    <div class="card-icon">⚡</div>
-                    <h3>スマート精算ルート算出</h3>
-                    <p>誰がいくら立替えたかをまとめて登録するだけで、最終的な送金回数が最も少なくなるよう自動で精算ルートを割り出します。</p>
+            <!-- Row 1: Dashboard / Home -->
+            <div class="showcase-row">
+                <div class="showcase-text-col">
+                    <div class="showcase-num">01 / DASHBOARD</div>
+                    <h3>グループ一覧と直感的な作成</h3>
+                    <p>作成した割り勘グループが一覧で表示され、進捗や総支出が一目で確認できます。合宿や旅行など、イベントごとに切り替えて管理が可能です。</p>
+                    <ul class="feature-bullets">
+                        <li><span>✔</span> アカウント不要で即座に開始可能</li>
+                        <li><span>✔</span> グループごとに為替レートを設定可能</li>
+                        <li><span>✔</span> 送金が完了したグループはワンタップで整理</li>
+                    </ul>
                 </div>
-
-                <div class="card">
-                    <div class="card-icon">🔗</div>
-                    <h3>PayPay送金＆メモ共有</h3>
-                    <p>相手のPayPay送金リンクをタップして瞬時に送金したり、銀行口座などの支払メモを1タップでコピーして簡単・スマートに清算が行えます。</p>
+                <div class="showcase-img-col">
+                    <div class="device-wrapper">
+                        <div class="device-inner">
+                            <img src="assets/IMG_2376.jpeg" alt="warii dashboard screenshot">
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <div class="card">
-                    <div class="card-icon">🌐</div>
-                    <h3>Webビューアで簡単共有</h3>
-                    <p>アプリをインストールしていない友達にも、共有URLを送るだけでブラウザから精算結果や支払い先情報をコピー・確認してもらえます。</p>
+            <!-- Row 2: Details / Input -->
+            <div class="showcase-row">
+                <div class="showcase-text-col">
+                    <div class="showcase-num">02 / CALCULATION</div>
+                    <h3>複雑な立替計算も一瞬で解決</h3>
+                    <p>誰がいくら支払ったかを記録するだけで、全員の最終的な精算金額（誰から誰へ、いくら送金すればいいか）を最小限の送金回数で自動算出します。</p>
+                    <ul class="feature-bullets">
+                        <li><span>✔</span> 均等割りから個別の比率（パーセンテージ）割りまで対応</li>
+                        <li><span>✔</span> 割り勘から特定メンバーを除外する設定も可能</li>
+                        <li><span>✔</span> 変更内容や出費はリアルタイムにクラウド同期</li>
+                    </ul>
+                </div>
+                <div class="showcase-img-col">
+                    <div class="device-wrapper">
+                        <div class="device-inner">
+                            <img src="assets/IMG_2377.jpeg" alt="warii calculation screenshot">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: PayPay & Notes -->
+            <div class="showcase-row">
+                <div class="showcase-text-col">
+                    <div class="showcase-num">03 / PAYMENT SHARING</div>
+                    <h3>送金先を1タップでかんたん共有</h3>
+                    <p>支払先となるメンバーのPayPayリンクをタップして公式アプリを呼び出したり、銀行口座情報を1タップで安全にコピーできます。</p>
+                    <ul class="feature-bullets">
+                        <li><span>✔</span> 面倒な口座番号の手入力・転記のミスを防ぎます</li>
+                        <li><span>✔</span> PayPay・振込メモの優先順位を登録可能</li>
+                        <li><span>✔</span> アプリを持たないメンバーへもWebリンクで共有可能</li>
+                    </ul>
+                </div>
+                <div class="showcase-img-col">
+                    <div class="device-wrapper">
+                        <div class="device-inner">
+                            <img src="assets/IMG_2380.jpeg" alt="warii payment sharing screenshot">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -759,7 +828,7 @@
                     <p>サーバーデータの保存期間は、最終更新（追加・編集・同期）から30日間です。30日を過ぎるとサーバーから自動で完全削除されます。</p>
                 </div>
                 <div class="faq-item">
-                    <h4>銀行口座などを登録しても本当に安全ですか？</h4>
+                    <h4>登録したお支払メモは本当に安全ですか？</h4>
                     <p>はい、すべての支払情報はエンドツーエンド（E2EE）で強力に暗号化されてからサーバーに送信されます。サーバー管理者もデータを見ることはできない設計ですのでご安心ください。</p>
                 </div>
             </div>
@@ -777,38 +846,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        const screenshots = [
-            'assets/IMG_2376.jpeg',
-            'assets/IMG_2377.jpeg',
-            'assets/IMG_2378.jpeg',
-            'assets/IMG_2379.jpeg',
-            'assets/IMG_2380.jpeg'
-        ];
-        let currentIndex = 0;
-        const rotator = document.getElementById('rotator');
-
-        // Function to set rotator image manually
-        function setRotator(index) {
-            currentIndex = index;
-            rotator.src = screenshots[currentIndex];
-            resetInterval();
-        }
-
-        // Auto rotation
-        let intervalId = setInterval(() => {
-            currentIndex = (currentIndex + 1) % screenshots.length;
-            rotator.src = screenshots[currentIndex];
-        }, 3500);
-
-        function resetInterval() {
-            clearInterval(intervalId);
-            intervalId = setInterval(() => {
-                currentIndex = (currentIndex + 1) % screenshots.length;
-                rotator.src = screenshots[currentIndex];
-            }, 3500);
-        }
-    </script>
 </body>
 </html>
