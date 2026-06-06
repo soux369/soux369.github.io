@@ -168,23 +168,17 @@ body {
     letter-spacing: -1.0px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     text-decoration: none;
 }
 
-.logo-icon {
-    width: 32px;
-    height: 32px;
+.logo-img {
+    width: 38px;
+    height: 38px;
     border-radius: 9px;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-purple));
-    color: white;
-    font-weight: 800;
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Noto Sans JP', sans-serif;
-    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.22);
+    object-fit: cover;
+    border: 1px solid rgba(79, 70, 229, 0.15);
 }
 
 .nav-links {
@@ -1188,14 +1182,15 @@ footer {
     color: var(--color-black);
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
 }
 
-.footer-left .logo-icon {
-    width: 24px;
-    height: 24px;
-    font-size: 0.8rem;
-    border-radius: 6px;
+.footer-logo-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.15);
+    object-fit: cover;
 }
 
 .footer-left p {
@@ -1282,11 +1277,10 @@ footer {
         font-size: 1.3rem;
     }
 
-    .logo-icon {
-        width: 28px;
-        height: 28px;
-        font-size: 0.95rem;
-        border-radius: 7px;
+    .logo-img {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
     }
 
     .nav-links {
