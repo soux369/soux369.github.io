@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用規約 - warii</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --dark: #0F172A;
+            --light: #F8FAFC;
+            --text-main: #334155;
+            --text-muted: #64748B;
+            --border: rgba(226, 232, 240, 0.8);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: var(--light);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        header {
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            font-size: 14px;
+            color: var(--primary);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: var(--dark);
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: var(--dark);
+            margin-top: 32px;
+            margin-bottom: 12px;
+            border-left: 4px solid var(--primary);
+            padding-left: 12px;
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+            font-size: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background: rgba(79, 70, 229, 0.04);
+            border: 1px solid rgba(79, 70, 229, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .highlight-box h3 {
+            color: var(--primary);
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .date {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: 40px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-link">&larr; warii ホームへ戻る</a>
+            <h1>利用規約</h1>
+        </header>
+
+        <p>この利用規約（以下、「本規約」といいます）は、個人開発者（以下、「開発者」といいます）が提供する割り勘計算・送金メモ共有サービス「warii」（アプリおよび共有用Webビューアを含み、以下「本サービス」といいます）の利用条件を定めるものです。ユーザーの皆さま（以下、「ユーザー」といいます）には、本規約に従って本サービスをご利用いただきます。</p>
+
+        <div class="highlight-box">
+            <h3>⏰ データ自動削除ポリシーについて</h3>
+            <p>本サービスではサーバーリソースの節約とプライバシー保護のため、登録されたグループおよび関連するすべての割り勘明細データは、<strong>グループ作成から30日後に自動的にデータベースから完全に削除</strong>されます。削除されたデータは復元できませんのでご注意ください。</p>
+        </div>
+
+        <h2>1. 同意について</h2>
+        <p>ユーザーは、本サービスを利用することにより、本規約およびプライバシーポリシーに同意したものとみなされます。本規約に同意いただけない場合は、本サービスをご利用いただけません。</p>
+
+        <h2>2. 送金先情報の登録と自己責任</h2>
+        <p>本サービスでは、PayPay送金用リンクや銀行口座メモなどの登録が可能です。これらの情報は、送信前にユーザーのデバイス側で暗号化（E2EE）されますが、入力された情報の正確性についてはユーザー自身が保証するものとします。入力ミスによる誤送金等のトラブルについて、開発者は一切の責任を負いません。</p>
+
+        <h2>3. 禁止事項</h2>
+        <p>ユーザーは、本サービスの利用にあたり、以下の行為をしてはなりません。</p>
+        <ul>
+            <li>本サービス（アプリまたはWebビューア）を改ざん、リバースエンジニアリング、または不正に解析する行為。</li>
+            <li>本サービスのサーバーやネットワークに過度な負荷をかける行為。</li>
+            <li>他のユーザーの暗号化されたデータの解読を試みる行為。</li>
+            <li>その他、公序良俗や法令に違反する行為。</li>
+        </ul>
+
+        <h2>4. 免責事項</h2>
+        <ul>
+            <li>開発者は、本サービスに事実上または法律上の瑕疵がないことを保証しておりません。</li>
+            <li>本サービスの利用によりユーザーまたは第三者に生じた損害（誤送金、データ消失、接続不良など）について、開発者は一切の責任を負いません。</li>
+            <li>本サービスは、システムメンテナンスや開発者の都合により、予告なく一時停止、中断、または終了する場合があります。</li>
+        </ul>
+
+        <h2>5. 規約の変更</h2>
+        <p>開発者は、必要と判断した場合には、ユーザーに事前に通知することなく本規約を変更することができるものとします。変更後の規約は、本ページに掲載された時点から効力を生じるものとします。</p>
+
+        <p class="date">制定日: 2026年6月8日</p>
+    </div>
+</body>
+</html>
