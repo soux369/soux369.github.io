@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabini | 旅の記憶を、地図と写真で美しく残すフォトマップアプリ</title>
+    <meta name="description" content="tabiniは、写真に撮影場所の地図、緯度経度、撮影機材、EXIFデータ、地名をスタイリッシュにオーバーレイする旅の写真編集アプリです。">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tabini.app/">
+    <meta property="og:title" content="tabini | 旅の記憶を、地図と写真で美しく残すフォトマップアプリ">
+    <meta property="og:description" content="写真に撮影地、地図、撮影時の詳細データを自動で美しく重ね合わせる。旅のアルバムをアップグレードしましょう。">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/screenshot_create.jpg"> <!-- Uses app screenshot as temporary favicon pattern -->
+</head>
+<body>
+    <div class="bg-glow-container">
+        <div class="bg-glow-1"></div>
+        <div class="bg-glow-2"></div>
+        <div class="bg-glow-3"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">tabini<span>.</span></a>
+            <button class="burger" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#features">機能</a></li>
+                <li><a href="#demo">デモ</a></li>
+                <li><a href="privacy.html">プライバシーポリシー</a></li>
+                <li><a href="#download" class="btn-cta">ダウンロード</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="demo">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <h1>旅の記憶を、<span>地図と写真</span>で美しく残す。</h1>
+                <p>
+                    tabini (タビニ) は、旅先で撮った大切な写真に、GPS位置情報から取得したマップ、緯度経度、日付、そしてカメラの撮影機材情報をスタイリッシュに重ね合わせる写真アプリです。何気ない日常の１コマや特別な旅の思い出を、アートワークに変えましょう。
+                </p>
+                
+                <div class="hero-actions" id="download">
+                    <!-- App Store Badge -->
+                    <a href="#" class="btn-store">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.58C4.25,17.12 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.1,16.67C20.08,16.74 19.67,18.11 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/>
+                        </svg>
+                        <div class="store-text">
+                            <span class="sub">Download on the</span>
+                            <span class="main">App Store</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Tabs linked to screens -->
+                <div class="screenshot-tabs">
+                    <button class="tab-btn active" data-index="0">
+                        <span class="tab-title">01. 写真をえらぶ</span>
+                        <span class="tab-desc">シンプルなUIで、写真選択から瞬時にプレビュー</span>
+                    </button>
+                    <button class="tab-btn" data-index="1">
+                        <span class="tab-title">02. デザインのカスタマイズ</span>
+                        <span class="tab-desc">文字色、不透明度、フォント、地名サイズを自在に変更</span>
+                    </button>
+                    <button class="tab-btn" data-index="2">
+                        <span class="tab-title">03. 保存履歴</span>
+                        <span class="tab-desc">過去に作成したお気に入りの写真を一覧でいつでもチェック</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Phone Frame Display Container -->
+            <div class="hero-mockup">
+                <div class="phone-mockup-wrapper">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <div class="phone-notch"></div>
+                            <img src="assets/screenshot_create.jpg" alt="作成画面" class="phone-screenshot active">
+                            <img src="assets/screenshot_design.jpg" alt="デザインカスタマイズ" class="phone-screenshot">
+                            <img src="assets/screenshot_history.jpg" alt="保存履歴一覧" class="phone-screenshot">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase Section -->
+    <section class="gallery-showcase" id="gallery">
+        <div class="section-header">
+            <h2>美しい仕上がりギャラリー</h2>
+            <p>旅先の思い出が、ルート線画マップや詳細な撮影データ（EXIF）を重ね合わせることで、洗練された一枚のアートワークに仕上がります。</p>
+        </div>
+        <div class="gallery-container">
+            <div class="gallery-image-wrapper">
+                <img src="assets/screenshot_danang.jpg" alt="ダナン、ベトナムの仕上がり写真" class="showcase-img">
+                <div class="gallery-details">
+                    <span class="gallery-tag">ベトナム・ダナンでの旅の写真例</span>
+                    <h3>ダナン, ベトナム</h3>
+                    <p class="exif-data">apple iphone 16 | f/1.6 | 1/60s | iso 160 | 2025.08.12</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Features Section -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <h2>機能の特徴</h2>
+            <p>旅行をもっと楽しく、もっとクリエイティブに。旅の体験をワンランク上の写真にするための機能が揃っています。</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <!-- Map Icon SVG -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                        <line x1="8" y1="2" x2="8" y2="18"></line>
+                        <line x1="16" y1="6" x2="16" y2="22"></line>
+                    </svg>
+                </div>
+                <h3>マップ・位置情報の自動オーバーレイ</h3>
+                <p>写真のEXIFに含まれるGPSメタデータから緯度経度・撮影場所を自動計算。スマートに写真に配置されます。</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <!-- Sliders / Design Icon SVG -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="4" y1="21" x2="4" y2="14"></line>
+                        <line x1="4" y1="10" x2="4" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12" y2="3"></line>
+                        <line x1="20" y1="21" x2="20" y2="16"></line>
+                        <line x1="20" y1="12" x2="20" y2="3"></line>
+                        <line x1="1" y1="14" x2="7" y2="14"></line>
+                        <line x1="9" y1="8" x2="15" y2="8"></line>
+                        <line x1="17" y1="16" x2="23" y2="16"></line>
+                    </svg>
+                </div>
+                <h3>自由度の高いカスタマイズ性</h3>
+                <p>テキストサイズ、不透明度、文字フォント（System / Monospace / Serif 等）、カスタムカラーパレットを自在に設定できます。</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <!-- Database Icon SVG -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                        <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
+                        <path d="M3 12A9 3 0 0 0 21 12"></path>
+                    </svg>
+                </div>
+                <h3>ローカル保存履歴機能</h3>
+                <p>アプリ内で作成した写真は自動的にローカルの保存一覧に蓄積。いつでも過去の作品にアクセスできます。</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <!-- Lock Icon SVG -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                </div>
+                <h3>安心のプライバシーファースト</h3>
+                <p>全ての画像編集や位置情報デコード処理はデバイス内で完結。個人情報が外部サーバーに送信されることはありません。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="#" class="logo">tabini<span>.</span></a>
+                <span class="copyright">&copy; 2026 tabini. All rights reserved.</span>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#features">機能</a></li>
+                <li><a href="privacy.html">プライバシーポリシー</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
